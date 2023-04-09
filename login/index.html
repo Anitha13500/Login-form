@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-eqiv="X-UA-compatible" content="IE=Rdge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>login form</title>
+	<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+   
+   <div class='main'>
+      <form class='form' name='form1' action='./mainPage.html' onsubmit='return(validation())'>
+	     <h1 class='insta'>Login form</h1>
+		 <input class='input1' id='in1' placeholder='username or email' type='text'></input>
+		 <input class='input2' id='in2' placeholder='password' type='password'></input>
+		 <button class='button' type='submit'>Login</button>
+	  </form>
+   </div>
+   <script> 
+	 
+	 
+	 function validation(){
+	    var username=document.getElementById("in1").value;
+	    var password=document.getElementById("in2").value;
+		
+		if(username==""){
+		   alert("fill your username");
+		   document.form1.in1.focus();
+		   return false;
+		}
+		else if(!isNaN(username)){
+		   alert("enter name alphabets only");
+		   document.form1.in1.focus();
+		   return false;
+		}
+		else if(password==""){
+		   alert("fill your password");
+		   document.form1.in2.focus();
+		   return false;
+		}
+		else if(password.length < 6){
+		   alert("please enter password atleast 6 character");
+		   document.form1.in2.focus();
+		   return false;
+		}
+		return true;
+	 }
+	 
+	 
+   </script>
+</body>
+</html>
